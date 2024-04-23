@@ -1,0 +1,640 @@
+body {
+  text-align: center;
+  margin: 0px;
+  padding: 0px; /*se pone el margin y padding de 0px ya que el navegador tiene un margin predeterminado que no me permite tener los elementos bien unidos al borde de la ventana*/
+
+  /*FUENTES*/
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased; /*con esto determino un estiloo de letra suave para chrome y safari*/
+  -moz-font-smoothing: antialiased; /*con esto determino un estiloo de letra suave para mozilla*/
+  -moz-osx-font-smoothing: antialiased; /*con esto determino un estiloo de letra suave para mozilla en macOS*/
+}
+
+#header {
+  height: 120px;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  border-top: 5px solid #61dafb;
+}
+
+#logo {
+  width: 30%;
+  font-size: 30px;
+  float: left;
+  margin-top: 35px;
+}
+
+#logo span {
+  text-decoration: none;
+  color: black;
+}
+
+#logo img {
+  display: block;
+  float: left;
+  height: 60px;
+  margin-top: -9px;
+  margin-right: 5px;
+  animation: girar infinite 5s linear; /*aqui llamamos el keyframe y le damos otras propiedades*/
+}
+
+@keyframes girar {
+  /*con los keyframes creamos una especie de funcion para darle animacion a los selectores*/
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#brand {
+  display: block;
+  margin: 0px;
+  float: left;
+}
+
+.center {
+  width: 75%;
+  margin: 0px auto;
+}
+
+.clearfix {
+  /*esto hace que el contenido de abajo no me interfiera con el header*/
+  clear: both;
+  float: none;
+}
+
+#menu {
+  width: 70%;
+  float: right;
+  font-size: 18px;
+}
+
+#menu ul {
+  line-height: 85px;
+  width: 70%;
+  float: right;
+}
+
+#menu ul li {
+  list-style: none; /*esto me quita los puntos de la lista*/
+  height: 46px;
+  display: inline-block; /*pone los elemtos de manera contigua*/
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#menu a {
+  text-decoration: none; /*esto me quita la linea debajo de los enlaces*/
+  color: #444;
+  transition: 300ms all;
+}
+
+#menu a:hover {
+  /*funciona mientras el cursor pase por encima*/
+  color: #61dafb;
+  font-weight: bolder;
+  border-bottom: 2px solid #61dafb;
+}
+
+.active {
+  color: #61dafb;
+  font-weight: bolder;
+  border-bottom: 2px solid #61dafb;
+}
+
+#slider {
+  width: 100%;
+  height: 250px;
+  /*line-height: 320px;*/
+  color: white;
+
+  /*Degradado CSS (from CSS gradient): */
+  background: rgb(97, 218, 251);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(97, 218, 251, 1) 14%,
+    rgba(63, 152, 176, 1) 65%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(97, 218, 251, 1) 14%,
+    rgba(63, 152, 176, 1) 65%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(97, 218, 251, 1) 14%,
+    rgba(63, 152, 176, 1) 65%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#61dafb",endColorstr="#3f98b0",GradientType=1);
+}
+
+#slider h1 {
+  margin-top: 0.2px;
+  padding: 0px;
+  padding-top: 60px;
+  text-align: center;
+  text-shadow: 0px 0px 5px #444;
+}
+
+.btn-white {
+  color: black;
+  display: block;
+  background: white;
+  padding: 10px;
+  width: 100px;
+  margin: auto;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0px 0px 5px #444;
+  margin-top: 55px;
+  transition: 300ms all; /*establecemos la transicion al cambiar a hover*/
+}
+
+.btn-white:hover {
+  /*establecemos un hover para el boton de "ir al blog" y sus propiedades*/
+  background-color: #47a1b9;
+  color: white;
+}
+
+#slider.slider-small {
+  height: 150px;
+}
+
+#slider.slider-small h1 {
+  margin-top: 0.2px;
+  padding: 0px;
+  padding-top: 55px;
+  text-align: center;
+  text-shadow: 0px 0px 5px #444;
+}
+
+#content {
+  width: 70%;
+  float: left;
+  min-height: 650px;
+  margin-right: 20px;
+}
+
+#sidebar {
+  width: 25%;
+  float: left;
+}
+
+.sidebar-item {
+  background: #f7f7f7;
+  padding: 30px;
+  margin-top: 30px;
+}
+
+.sidebar-item h3 {
+  text-transform: uppercase;
+  font-size: 17px;
+  margin: 0px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #ccc;
+}
+
+.sidebar-item .btn {
+  margin: 0px auto;
+  margin-top: 10px;
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+.btn {
+  font-family: "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  display: block; /*ocupado todo el ancho del elemento*/
+  background: #61dafb;
+  color: white;
+  padding: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 200ms all;
+  border: none; /*quitar los bordes y sombras del input tipo buttom*/
+  cursor: pointer; /*cuando haga hover me pone el dedito de cursor*/
+}
+
+.btn:hover {
+  background: black;
+}
+
+input[type="text"],
+textarea, input[type="file"] {
+  /*selecciona todo los inputs de tipo text*/
+  width: 100%;
+  min-height: 30px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  padding: 3px;
+  transition: 200ms all;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 100px;
+  width: 100%;
+  max-width: 100%;
+  max-height: 300px;
+  min-height: 100px;
+  min-width: 100%;
+}
+
+.mid-form {
+  width: 50%;
+  margin: 0px auto;
+}
+
+.mid-form label {
+  display: block;
+  float: left;
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  /*focus me acciona cuando hago click en el elemento*/
+  box-shadow: 0px 0px 2px #444 inset; /*inset se queda sostenido al hacer click*/
+}
+
+input[type="text"]:hover,
+textarea:hover {
+  box-shadow: 0px 0px 2px #444 inset;
+}
+
+.mid-form p {
+  float: left;
+  font-weight: bold;
+  margin-bottom: 25px;
+  margin-top: 20px;
+}
+
+.radiobuttoms {
+  margin-top: 22px;
+}
+
+.buttomsform {
+  display: block;
+  margin-top: 25px;
+}
+
+.buttonsform1 {
+  display: inline-block;
+  margin-right: 10px;
+}
+.buttonsform2 {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.datosForm {
+  border: 1px solid;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.datosForm th,
+.datosForm td {
+  border: 1px solid;
+  padding: 3px;
+}
+
+#footer {
+  background: rgb(97, 218, 251);
+  background: -moz-radial-gradient(
+    circle,
+    rgba(97, 218, 251, 1) 14%,
+    rgba(63, 152, 176, 1) 65%
+  );
+  background: -webkit-radial-gradient(
+    circle,
+    rgba(97, 218, 251, 1) 14%,
+    rgba(63, 152, 176, 1) 65%
+  );
+  background: radial-gradient(
+    circle,
+    rgba(97, 218, 251, 1) 14%,
+    rgba(63, 152, 176, 1) 65%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#61dafb",endColorstr="#3f98b0",GradientType=1);
+
+  display: block;
+  padding-bottom: -20px;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  color: #444;
+  align-items: center;
+}
+
+#footer p {
+  margin: 0px;
+  padding: 0px;
+}
+
+.article-item {
+  width: 100%;
+  border-bottom: 1px solid #d6d6d6;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: left;
+}
+
+.article-item .image-wrap img {
+  width: 130px;
+  height: 130px;
+  overflow: hidden; /*todo lo que sobresalga del tamaño estipulado en el elemento, lo borra*/
+  float: left;
+  margin-right: 15px;
+  border: 1px solid #ccc;
+}
+
+.article-item h2 {
+  display: block;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 7px;
+}
+
+.article-item .date {
+  display: block;
+  width: 100%;
+  color: #adadad;
+}
+
+.article-item a {
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  color: #444;
+}
+
+.article-item a:hover {
+  text-decoration: underline;
+}
+
+.sub-header {
+  font-size: 38px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+  border-left: -20px;
+}
+
+.article-detail .image-wrap img {
+  float: none;
+  width: 70%;
+  height: 400px;
+  display: flex;
+  margin: auto;
+}
+
+.article-detail .sub-header {
+  margin-bottom: 20px;
+  border: none;
+}
+
+.article-detail .date{
+  margin-top: 20px;
+}
+
+.article-detail p{
+  text-align: justify;
+}
+
+.article-detail h1{
+  text-align: center;
+}
+
+.sidebar-article {
+  margin-top: 119px;
+}
+
+.loadingText {
+  color: #47a1b9;
+}
+
+.spinner {
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-left-color: #61dafb;
+  margin: 0 auto;
+  margin-top: 200px;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btnEDE {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.btn-edit {
+  background-color: rgb(214, 178, 0);
+  padding: 0 15px 0 15px;
+  display: grid;
+  align-items: center;
+}
+
+.btn-delete {
+  background-color: rgb(207, 0, 0);
+}
+
+.btn-success{
+  background: green;
+  margin-left: 3px;
+}
+
+.imageEdit{
+  margin-top: 20px;
+  color: red;
+}
+
+.imageEdit img{
+  height: 200px;
+}
+
+/*Responsive design*/
+
+/*Se usan los MediaQuery*/
+
+@media (max-width: 1277px) {
+  /*Desde la anchura 0px hasta 1488px de pantalla me aplica los estilos siguientes*/
+  .center {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1178px) {
+  /*Desde la anchura 0px hasta 1488px de pantalla me aplica los estilos siguientes*/
+  .center {
+    width: 95%;
+  }
+
+  #menu ul {
+    width: auto;
+  }
+
+  #slider h1 {
+    font-size: 30px;
+  }
+
+  .btn-white {
+    width: 70px;
+    height: 18px;
+    font-size: 12px;
+    margin-top: 40px;
+  }
+
+  #slider {
+    height: 220px;
+  }
+}
+
+@media (max-width: 1010px) {
+  #slider h1 {
+    font-size: 25px;
+  }
+
+  .mid-form {
+    width: 75%;
+  }
+}
+
+@media (min-width: 840px) and (max-width: 854px) {
+  #logo {
+    width: 250px;
+  }
+  #menu{
+    width: 65%;
+  }
+}
+
+@media (max-width: 840px) {
+  #menu,
+  #menu ul {
+    clear: both;
+    float: none;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    line-height: 50px;
+  }
+
+  #logo {
+    float: none;
+    width: 300px;
+    margin: 0px auto;
+    margin-top: 20px;
+  }
+
+  #content {
+    float: none;
+    width: 100%;
+  }
+
+  #sidebar {
+    float: none;
+    width: 60%;
+    margin: 0px auto;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 494px) {
+  #header {
+    min-height: 130px;
+    overflow: hidden;
+  }
+
+  #slider h1 {
+    font-size: 20px;
+    padding-top: 15px;
+  }
+
+  #slider {
+    height: 150px;
+  }
+
+  #menu,
+  #menu ul {
+    line-height: 50px;
+  }
+
+  #menu ul li {
+    margin-left: 7px;
+    margin-right: 7px;
+    font-size: 15px;
+  }
+
+  .btn-white {
+    margin-top: 20px;
+    font-size: 10px;
+    padding: 5px;
+    padding-bottom: 2px;
+    margin-top: 25px;
+  }
+
+  #slider.slider-small {
+    height: 100px;
+  }
+
+  #slider.slider-small h1 {
+    padding-top: 35px;
+  }
+
+  #slider.slider-small {
+    height: 100px;
+  }
+
+  #slider.slider-small h1 {
+    padding-top: 35px;
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 418px) {
+  .radiobuttoms {
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 22px;
+  }
+
+}
+
+@media (max-width: 244px) {
+  .buttonsform1,
+  .buttonsform2 {
+    margin: 0px;
+    font-size: 10px;
+  }
+}
